@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Fantasy.FastPay.Domain
 {
-    class Class1
+    class Pessoa3
     {
         public int MyProperty { get; set; }
     }
