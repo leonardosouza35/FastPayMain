@@ -8,6 +8,9 @@ namespace Fantasy.FastPay.Domain
     class Pessoa5
     {
         public int MyProperty { get; set; }
+        public string MinhaNovaPropriedade { get; set; }
 		public int NovaPropriedade { get; set; }
+
     }
 }
+
