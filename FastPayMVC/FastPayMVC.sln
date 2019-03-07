@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Domain", "0 - Domain", "{863EBD3B-D06F-4B38-B850-7DE8C6287C51}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - DAO", "2 - DAO", "{CA341440-958B-4AB6-858C-7C011DB61243}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Controller", "4 - Controller", "{F1D030AE-4887-4937-9EC5-C912739E7842}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Commom", "3 - Commom", "{29CA93B7-30CE-4082-9F03-61E4A255F839}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Tests", "1 - Tests", "{3AE193BE-D2C9-4FBF-AC85-D0EA1F9DD6A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Presentation", "5 - Presentation", "{DB543142-BD87-4FAD-BDFA-715ACD441935}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 -1 WEB", "5 -1 WEB", "{3B4DF8A6-7EB7-4E64-AACF-FB34F7F06A0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fantasy.FastPay.Web", "Fantasy.FastPay.Web\Fantasy.FastPay.Web.csproj", "{006191A6-68F0-44C2-BAC5-C6BFEE48B8D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fantasy.FastPay.Domain", "Fantasy.FastPay.Domain\Fantasy.FastPay.Domain.csproj", "{2F07C86D-F9D4-4DA8-83BB-B7E26B2064B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fantasy.FastPay.Tests", "Fantasy.FastPay.Tests\Fantasy.FastPay.Tests.csproj", "{DA9091F9-3702-4FB6-915C-91631C7D39F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fantasy.FastPay.DAO", "Fantasy.FastPay.DAO\Fantasy.FastPay.DAO.csproj", "{FA799005-BBDE-44CF-9765-C6A1AC7DE1F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fantasy.FastPay.Commom", "Fantasy.FastPay.Commom\Fantasy.FastPay.Commom.csproj", "{A9BAD5CE-7E3B-4EED-88BA-20CDB9619B51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fantasy.FastPay.Controller", "Fantasy.FastPay.Controller\Fantasy.FastPay.Controller.csproj", "{B90CC7C3-1311-4E76-AC41-0225313F5610}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{006191A6-68F0-44C2-BAC5-C6BFEE48B8D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{006191A6-68F0-44C2-BAC5-C6BFEE48B8D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{006191A6-68F0-44C2-BAC5-C6BFEE48B8D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{006191A6-68F0-44C2-BAC5-C6BFEE48B8D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F07C86D-F9D4-4DA8-83BB-B7E26B2064B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F07C86D-F9D4-4DA8-83BB-B7E26B2064B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F07C86D-F9D4-4DA8-83BB-B7E26B2064B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F07C86D-F9D4-4DA8-83BB-B7E26B2064B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA9091F9-3702-4FB6-915C-91631C7D39F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA9091F9-3702-4FB6-915C-91631C7D39F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA9091F9-3702-4FB6-915C-91631C7D39F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA9091F9-3702-4FB6-915C-91631C7D39F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA799005-BBDE-44CF-9765-C6A1AC7DE1F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA799005-BBDE-44CF-9765-C6A1AC7DE1F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA799005-BBDE-44CF-9765-C6A1AC7DE1F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA799005-BBDE-44CF-9765-C6A1AC7DE1F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9BAD5CE-7E3B-4EED-88BA-20CDB9619B51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9BAD5CE-7E3B-4EED-88BA-20CDB9619B51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9BAD5CE-7E3B-4EED-88BA-20CDB9619B51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9BAD5CE-7E3B-4EED-88BA-20CDB9619B51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B90CC7C3-1311-4E76-AC41-0225313F5610}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B90CC7C3-1311-4E76-AC41-0225313F5610}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B90CC7C3-1311-4E76-AC41-0225313F5610}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B90CC7C3-1311-4E76-AC41-0225313F5610}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2F07C86D-F9D4-4DA8-83BB-B7E26B2064B2} = {863EBD3B-D06F-4B38-B850-7DE8C6287C51}
+		{FA799005-BBDE-44CF-9765-C6A1AC7DE1F1} = {CA341440-958B-4AB6-858C-7C011DB61243}
+		{B90CC7C3-1311-4E76-AC41-0225313F5610} = {F1D030AE-4887-4937-9EC5-C912739E7842}
+		{A9BAD5CE-7E3B-4EED-88BA-20CDB9619B51} = {29CA93B7-30CE-4082-9F03-61E4A255F839}
+		{DA9091F9-3702-4FB6-915C-91631C7D39F4} = {3AE193BE-D2C9-4FBF-AC85-D0EA1F9DD6A8}
+		{3B4DF8A6-7EB7-4E64-AACF-FB34F7F06A0F} = {DB543142-BD87-4FAD-BDFA-715ACD441935}
+		{006191A6-68F0-44C2-BAC5-C6BFEE48B8D8} = {3B4DF8A6-7EB7-4E64-AACF-FB34F7F06A0F}
+	EndGlobalSection
+EndGlobal
