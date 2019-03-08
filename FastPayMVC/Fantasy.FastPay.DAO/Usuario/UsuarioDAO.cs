@@ -9,45 +9,55 @@ namespace Fantasy.FastPay.DAO
     
     public class UsuarioDAO : BaseDAO
     {
-                        
+
         public List<Usuario> ObterTodos()
         {
-            var usuarios = new List<Usuario>();
-            try
-            {
-                OpenConnection();
+            return Db.Usuarios;
+        }
 
-                CreateCommand("select Email, Senha, Nome, SobreNome, CpfOrCnpj from usuarios");
-                
-                var reader = ExecuteDataReader();
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        var usuario = new Usuario();
-                        usuario.Email = reader["Email"].ToString();
-                        usuario.Senha = reader["Senha"].ToString();
-                        usuario.Nome = reader["Nome"].ToString();
-                        usuario.SobreNome = reader["SobreNome"].ToString();
-                        usuario.CpfOrCnpj = reader["CpfOrCnpj"].ToString();
-                        usuarios.Add(usuario);
-                    }
-                }
+        //public List<Usuario> ObterTodos()
+        //{
+        //    var usuarios = new List<Usuario>();
+        //    try
+        //    {
+        //        OpenConnection();
 
-                return usuarios;
+        //        CreateCommand("select Email, Senha, Nome, SobreNome, CpfOrCnpj from usuarios");
                 
-            }
-            catch (Exception ex)
-            {
-                //ex.ToString();
-                // Log Erro ex.ToString();
-                // Disparar Email ex.ToString();
-                throw new Exception("Erro no sistema.. enviar email para suporte");
-            }
-            finally
-            {
-                CloseConnection();
-            }
+        //        var reader = ExecuteDataReader();
+        //        if (reader.HasRows)
+        //        {
+        //            while (reader.Read())
+        //            {
+        //                var usuario = new Usuario();
+        //                usuario.Email = reader["Email"].ToString();
+        //                usuario.Senha = reader["Senha"].ToString();
+        //                usuario.Nome = reader["Nome"].ToString();
+        //                usuario.SobreNome = reader["SobreNome"].ToString();
+        //                usuario.CpfOrCnpj = reader["CpfOrCnpj"].ToString();
+        //                usuarios.Add(usuario);
+        //            }
+        //        }
+
+        //        return usuarios;
+                
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        //ex.ToString();
+        //        // Log Erro ex.ToString();
+        //        // Disparar Email ex.ToString();
+        //        throw new Exception("Erro no sistema.. enviar email para suporte");
+        //    }
+        //    finally
+        //    {
+        //        CloseConnection();
+        //    }
+        //}
+
+        public void AdicionarUsuario(Usuario usuario)
+        {
+            Db.Usuarios.Add(usuario);
         }
     }
 }

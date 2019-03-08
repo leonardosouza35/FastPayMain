@@ -19,5 +19,10 @@ namespace Fantasy.FastPay.Controller
         public List<Usuario> ObterTodos(){
             return _usuarioDAO.ObterTodos();
         }
+
+        public void AdicionarUsuario(Usuario usuario)
+        {
+            _usuarioDAO.AdicionarUsuario(usuario);
+        }
     }
 }

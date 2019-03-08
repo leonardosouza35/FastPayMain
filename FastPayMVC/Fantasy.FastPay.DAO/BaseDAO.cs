@@ -18,8 +18,10 @@ namespace Fantasy.FastPay.DAO
             } 
         }
 
+        
         protected void CreateCommand(string stringCommand)
-        {            
+        {
+            
             _sqlCommand = new SqlCommand(stringCommand, SqlConnection);
             
         }

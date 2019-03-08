@@ -38,9 +38,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Client.cs" />
     <Compile Include="Entities\Entity.cs" />
-    <Compile Include="Entities\Pedido.cs" />
+    <Compile Include="Entities\OrdemPagamento.cs" />
     <Compile Include="Entities\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
