@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="Forms\OrdemPagamentoForm.aspx" />
     <Content Include="Forms\UsuarioForm.aspx" />
     <Content Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
@@ -67,6 +68,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OrdemPagamentoForm.aspx.cs">
+      <DependentUpon>OrdemPagamentoForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\OrdemPagamentoForm.aspx.designer.cs">
+      <DependentUpon>OrdemPagamentoForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\UsuarioForm.aspx.cs">
       <DependentUpon>UsuarioForm.aspx</DependentUpon>

@@ -14,5 +14,11 @@ namespace Fantasy.FastPay.DAO
             get{return _usuarios ?? (_usuarios = new List<Usuario>());}  
         }
 
+        private static List<OrdemPagamento> _opagamentos;
+        public static List<OrdemPagamento> OPagamentos
+        {
+            get { return _opagamentos ?? (_opagamentos = new List<OrdemPagamento>()); }
+        }
+
     }
 }
