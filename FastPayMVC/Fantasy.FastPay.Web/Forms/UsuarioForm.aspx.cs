@@ -32,8 +32,14 @@ namespace Fantasy.FastPay.Web.Forms
             
         }
 
+        /// <summary>
+        /// Método (Evento) que é invocado pelo botão lá no aspx
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
+            // EU normalmente implemento o que faz este evento dentro de um método como o de baixo
             SalvarUsuario();
 
         }
@@ -44,14 +50,23 @@ namespace Fantasy.FastPay.Web.Forms
         private void CarregarUsuarios()
         {
             //Sessao, viewState, apllication State 
-            Session["usuarios"] = UsuarioController.ObterTodos();
-            var usuarios = Session["usuarios"];
-            grdUsuario.DataSource = usuarios;
+            //Session["usuarios"] = UsuarioController.ObterTodos();
+            //var usuarios = Session["usuarios"];
+            grdUsuario.DataSource = UsuarioController.ObterTodos();
             grdUsuario.DataBind();
         }
 
+
+        /// <summary>
+        /// Método privado mas pode ser protected tbm, mas nem chega a fazer tanta diferença pq poucas são as vezes
+        /// que referenciamos o codebehind a partir de outro codebehind
+        /// </summary>
         private void SalvarUsuario()
         {
+            /* e aqui temos algumas validações
+               chamadas ao controller para adicionar e obter do modelo em memoria lá no DAO
+             * e atualização no grid
+             */
             if (string.IsNullOrEmpty(txtNome.Text)
                 || string.IsNullOrEmpty(txtSobreNome.Text))
             {
@@ -66,9 +81,13 @@ namespace Fantasy.FastPay.Web.Forms
 
                 UsuarioController.AdicionarUsuario(usuario);
 
-                Session["usuarios"] = UsuarioController.ObterTodos();
+                //aqui foi so para mostrar para vc como trabalhar ou amazenar dados na sessao, mas nao vamos precisar
+                /// disso pelo menos por enquanto...
+                /// // ta estranho do jeito que está
+                /// // deixar essa linha comentada so como referência de como trabalhar com sessão
+                //Session["usuarios"] = UsuarioController.ObterTodos();
 
-                grdUsuario.DataSource = Session["usuarios"];
+                grdUsuario.DataSource = UsuarioController.ObterTodos();
                 grdUsuario.DataBind();
             }
         }

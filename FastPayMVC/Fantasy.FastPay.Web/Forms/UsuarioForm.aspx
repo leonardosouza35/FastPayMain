@@ -18,7 +18,7 @@
         <asp:TextBox ID="txtSobreNome" runat="server"></asp:TextBox>        
         <br />
         <br />
-        <asp:Button ID="btnSalvar" runat="server" Text="Salvar" OnClick="btnSalvar_Click" />
+        <asp:Button ID="btnSalvarUsuario" runat="server" Text="Salvar" OnClick="btnSalvar_Click" />
         <br />
         <br />
         <asp:Label ID="lblMessage" runat="server" Visible="false" ForeColor="Red"> Informe os campos Nome e Sobre Nome</asp:Label>

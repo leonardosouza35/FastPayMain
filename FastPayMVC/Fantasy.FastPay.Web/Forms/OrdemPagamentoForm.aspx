@@ -25,8 +25,41 @@
         <asp:TextBox ID="txNumContrato" runat="server"></asp:TextBox>        
         <br />
         <br />
-    <div>
-    
+        <!-- Definição do botao esta ok, exceto por não ter o evento -->
+        <!-- vai digitando devagar o OnClick como vou fazer para habilitar a criação 
+            automatica no codebehind -->
+
+        <!-- não para copiar e colcar conform vc perguntou... tem que digitar OnClick=.... e deixar que
+        o visual studio crie o evento para vc ou vc vai ter q fazer isso sozinho
+         -->        
+         <asp:Button ID="btnSalvarOrdemPagamento" runat="server" Text="Salvar" OnClick="btnSalvarOrdemPagamento_Click"/>
+        <br />
+        <br />
+                
+        <asp:Label ID="lblMessage" runat="server" Visible="false" ForeColor="Red"> Informe os campos Nome Completo e RG e Numero de Contrato</asp:Label>
+    <div id="divGrid">
+        <asp:GridView ID="grdOrdemPagamento" runat="server" AutoGenerateColumns="False" CellPadding="4" 
+            EnableModelValidation="True" ForeColor="#333333" GridLines="None" Width="374px">
+            <AlternatingRowStyle BackColor="White" />
+            <Columns>
+                <asp:BoundField DataField="NomeCompleto" HeaderText="Nome Completo">
+                <HeaderStyle HorizontalAlign="Left" />
+                </asp:BoundField>
+                <asp:BoundField DataField="RG" HeaderText="RG">
+                <HeaderStyle HorizontalAlign="Left" />
+                </asp:BoundField>
+                <asp:BoundField DataField="NumeroContrato" HeaderText="Numero de Contrato">
+                <HeaderStyle HorizontalAlign="Left" />
+                </asp:BoundField>
+            </Columns>
+            <EditRowStyle BackColor="#2461BF" />
+            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="#EFF3FB" />
+            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+        </asp:GridView>
+
     </div>
        
     </form>

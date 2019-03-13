@@ -19,6 +19,8 @@ namespace Fantasy.FastPay.Web.Forms
         #endregion
 
         #region EVENTOS
+
+        // So tem esse evento, mas precisamos do evento do botao
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -26,6 +28,14 @@ namespace Fantasy.FastPay.Web.Forms
                 CarregarOPagamentos();
             }
             
+        }
+
+        protected void btnSalvarOrdemPagamento_Click(object sender, EventArgs e)
+        {
+            // da mesma forma e seguindo o exemplo do cadastro de Usuario, você deve fazer o mesmo para pagamento
+            /// ou seja
+            /// 
+            SalvarOrdemPagamento();
         }
 
         #endregion
@@ -39,6 +49,30 @@ namespace Fantasy.FastPay.Web.Forms
             //grdOrdemPagamento.DataBind();
         }
 
+        private void SalvarOrdemPagamento()
+        {
+            throw new NotImplementedException();
+        }
         #endregion
+
+        
+
+        
+
+
+
+        /// Agora é o seguinte
+        /// Eu não quero mais este cara aqui.
+        /// blz ??
+        /// Se eu rodar o codigo dessa forma nao vai dar erro
+        /// pq existe um componente que esta apontando para ele
+        /// // eu até posso deixar esse "evento" aqui sem um componente vinculado
+        /// /// pq olhando para ele, não passa de um método de c# como outro qualquer
+
+
+        ///  Mas eu não posso ter... um componente com o OnClick apontando para um método (Evento) que não
+        ///  existe no codebehind
+        ///  
+        
     }
 }
