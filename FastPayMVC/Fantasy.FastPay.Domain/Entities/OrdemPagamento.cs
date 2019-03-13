@@ -7,10 +7,8 @@ namespace Fantasy.FastPay.Domain.Entities
 {
     public class OrdemPagamento: Entity
     {
-        public string NomeBeneficiario { get; set; }
-        public string CpfBeneficiario { get; set; }
-        public string NomeBanco { get; set; }
-        public string Agencia { get; set; }
-        public string ContaCorrente { get; set; }
+        public string NomeCompleto { get; set; }
+        public string CPF { get; set; }
+        public string NumeroContrato { get; set; }
     }
 }

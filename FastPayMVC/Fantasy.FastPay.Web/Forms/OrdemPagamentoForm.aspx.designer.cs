@@ -31,31 +31,31 @@ namespace Fantasy.FastPay.Web.Forms {
         protected global::System.Web.UI.WebControls.Label lblNomeCompleto;
         
         /// <summary>
-        /// txtNomeCompleto control.
+        /// txNomeCompleto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNomeCompleto;
+        protected global::System.Web.UI.WebControls.TextBox txNomeCompleto;
         
         /// <summary>
-        /// lblRG control.
+        /// lblCPF control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRG;
+        protected global::System.Web.UI.WebControls.Label lblCPF;
         
         /// <summary>
-        /// txRG control.
+        /// txCPF control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txRG;
+        protected global::System.Web.UI.WebControls.TextBox txCPF;
         
         /// <summary>
         /// lblNumeroContrato control.
@@ -83,15 +83,6 @@ namespace Fantasy.FastPay.Web.Forms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSalvarOrdemPagamento;
-        
-        /// <summary>
-        /// btnTeste control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnTeste;
         
         /// <summary>
         /// lblMessage control.

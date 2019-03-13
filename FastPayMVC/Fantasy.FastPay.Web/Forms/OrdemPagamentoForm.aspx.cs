@@ -1,4 +1,5 @@
 ﻿using Fantasy.FastPay.Controller;
+using Fantasy.FastPay.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +28,7 @@ namespace Fantasy.FastPay.Web.Forms
             {
                 CarregarOPagamentos();
             }
-            
+
         }
 
         protected void btnSalvarOrdemPagamento_Click(object sender, EventArgs e)
@@ -43,36 +44,55 @@ namespace Fantasy.FastPay.Web.Forms
         #region METODOS
         private void CarregarOPagamentos()
         {
-            Session["opagamentos"] = OrdemPagamentoController.ObterOrdens();
-            var usuarios = Session["usuarios"];
+            //Session["opagamentos"] = OrdemPagamentoController.ObterOrdens();
+            //var usuarios = Session["usuarios"];
             //grdOrdemPagamento.DataSource = usuarios;
             //grdOrdemPagamento.DataBind();
+            grdOrdemPagamento.DataSource = OrdemPagamentoController.ObterOrdens();
+            grdOrdemPagamento.DataBind();
         }
 
         private void SalvarOrdemPagamento()
         {
-            throw new NotImplementedException();
-        }
+            if (string.IsNullOrEmpty(txNomeCompleto.Text)
+                || string.IsNullOrEmpty(txCPF.Text) || string.IsNullOrEmpty(txNumContrato.Text))
+            {
+                lblMessage.Visible = true;
+            }
+            else
+            {
+                lblMessage.Visible = false;
+                var ordemPagamento = new OrdemPagamento();
+                ordemPagamento.NomeCompleto = txNomeCompleto.Text;
+                ordemPagamento.CPF = txCPF.Text;
+                ordemPagamento.NumeroContrato = txNumContrato.Text;
+
+                OrdemPagamentoController.AdicionarUsuario(ordemPagamento);
+
+                grdOrdemPagamento.DataSource = OrdemPagamentoController.ObterOrdens();
+                grdOrdemPagamento.DataBind();
+            }
         #endregion
 
-        
-
-        
 
 
 
-        /// Agora é o seguinte
-        /// Eu não quero mais este cara aqui.
-        /// blz ??
-        /// Se eu rodar o codigo dessa forma nao vai dar erro
-        /// pq existe um componente que esta apontando para ele
-        /// // eu até posso deixar esse "evento" aqui sem um componente vinculado
-        /// /// pq olhando para ele, não passa de um método de c# como outro qualquer
 
 
-        ///  Mas eu não posso ter... um componente com o OnClick apontando para um método (Evento) que não
-        ///  existe no codebehind
-        ///  
-        
+
+            /// Agora é o seguinte
+            /// Eu não quero mais este cara aqui.
+            /// blz ??
+            /// Se eu rodar o codigo dessa forma nao vai dar erro
+            /// pq existe um componente que esta apontando para ele
+            /// // eu até posso deixar esse "evento" aqui sem um componente vinculado
+            /// /// pq olhando para ele, não passa de um método de c# como outro qualquer
+
+
+            ///  Mas eu não posso ter... um componente com o OnClick apontando para um método (Evento) que não
+            ///  existe no codebehind
+            ///  
+
+        }
     }
 }

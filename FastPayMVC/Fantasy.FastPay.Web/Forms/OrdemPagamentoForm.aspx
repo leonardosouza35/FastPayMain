@@ -8,15 +8,15 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:Label ID="lblNomeCompleto" runat="server" AssociatedControlID="txtNomeCompleto" Text="Nome Completo"></asp:Label>
+        <asp:Label ID="lblNomeCompleto" runat="server" AssociatedControlID="txNomeCompleto" Text="Nome Completo"></asp:Label>
         <br />        
-        <asp:TextBox ID="txtNomeCompleto" runat="server"></asp:TextBox>        
+        <asp:TextBox ID="txNomeCompleto" runat="server"></asp:TextBox>        
         <br />
         <br />
 
-        <asp:Label ID="lblRG" runat="server" AssociatedControlID="txRG" Text="RG"></asp:Label>
+        <asp:Label ID="lblCPF" runat="server" AssociatedControlID="txCPF" Text="CPF"></asp:Label>
         <br />        
-        <asp:TextBox ID="txRG" runat="server"></asp:TextBox>        
+        <asp:TextBox ID="txCPF" runat="server"></asp:TextBox>        
         <br />
         <br />
 
@@ -45,7 +45,7 @@
                 <asp:BoundField DataField="NomeCompleto" HeaderText="Nome Completo">
                 <HeaderStyle HorizontalAlign="Left" />
                 </asp:BoundField>
-                <asp:BoundField DataField="RG" HeaderText="RG">
+                <asp:BoundField DataField="CPF" HeaderText="CPF">
                 <HeaderStyle HorizontalAlign="Left" />
                 </asp:BoundField>
                 <asp:BoundField DataField="NumeroContrato" HeaderText="Numero de Contrato">
