@@ -94,7 +94,7 @@ namespace Fantasy.FastPay.Web.Forms
                 else
                 {
                     ordemPagamento.Id = Convert.ToInt32(hdOrdemPagamentoId.Value);
-                    OrdemPagamentoController.AdicionarOrdemPagamento(ordemPagamento);
+                    OrdemPagamentoController.AtualizarOrdemPagamento(ordemPagamento);
                 }
                 
                 grdOrdemPagamento.DataSource = OrdemPagamentoController.ObterOrdens();
