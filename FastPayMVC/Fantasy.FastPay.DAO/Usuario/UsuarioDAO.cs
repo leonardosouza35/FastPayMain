@@ -1,5 +1,6 @@
 ﻿using Fantasy.FastPay.Domain.Entities;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -57,7 +58,59 @@ namespace Fantasy.FastPay.DAO
 
         public void AdicionarUsuario(Usuario usuario)
         {
-            Db.Usuarios.Add(usuario);
+            
+
+            // Estruturas de dados
+            // int[], ArrayList
+
+
+            //var arrayListUsuario = new ArrayList();
+
+            //// Boxing & Unboxing
+            //arrayListUsuario.Add(new Usuario());
+            //arrayListUsuario.Add(new Usuario());
+            //arrayListUsuario.Add(new Usuario());
+            //arrayListUsuario.Add(new OrdemPagamento());
+
+            //Usuario user;
+            //foreach(var item in arrayListUsuario){
+            //    user = (Usuario)item; Casting
+
+            //    user.Nome = "asdasda";
+            //}
+
+            var sequence = 1;
+            if (Db.Usuarios.Any())
+            {
+                var maxId = Db.Usuarios.Max(u => u.Id); // u => u.Id Expressão Lambda - Ler sobre Expressão Lambda e Função Anônima
+                maxId++;
+                sequence = maxId;
+            }
+
+            usuario.Id = sequence;
+            Db.Usuarios.Add(usuario);            
+        }
+
+        public Usuario ObterUsuario(int usuarioId)
+        {
+            return Db.Usuarios.FirstOrDefault(u => u.Id == usuarioId);
+        }
+
+        public void AtualizarUsuario(Usuario usuario)
+        {
+            var _usuario = Db.Usuarios.FirstOrDefault(u => u.Id == usuario.Id);
+
+            if (usuario != null)
+            {
+                _usuario.Nome = usuario.Nome;
+                _usuario.SobreNome = usuario.SobreNome;
+            }
+
+        }
+
+        public void DeletarUsuario(int usuarioId)
+        {
+            Db.Usuarios.RemoveAll(u => u.Id == usuarioId);            
         }
     }
 }

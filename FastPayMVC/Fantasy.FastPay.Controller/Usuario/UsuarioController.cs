@@ -24,5 +24,20 @@ namespace Fantasy.FastPay.Controller
         {
             _usuarioDAO.AdicionarUsuario(usuario);
         }
+
+        public Usuario ObterUsuario(int usuarioId)
+        {
+            return _usuarioDAO.ObterUsuario(usuarioId);
+        }
+
+        public void AtualizarUsuario(Usuario usuario)
+        {
+            _usuarioDAO.AtualizarUsuario(usuario);
+        }
+
+        public void DeletarUsuario(int usuarioId)
+        {
+            _usuarioDAO.DeletarUsuario(usuarioId);
+        }
     }
 }

@@ -20,8 +20,7 @@ namespace Fantasy.FastPay.Web.Forms
         #endregion
 
         #region Eventos
-        protected void Page_Load(object sender, EventArgs e)
-        {
+        protected void Page_Load(object sender, EventArgs e)        {
             //Esta linha existe para carregar a tela com usuarios somente quando for...
             // A primeira vez que o usuario esta entrando na pagina
             // Ou quando usuario atualizar a página inteira com f5, ctrl + r            
@@ -43,6 +42,23 @@ namespace Fantasy.FastPay.Web.Forms
             SalvarUsuario();
 
         }
+
+        protected void grdUsuario_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            switch (e.CommandName)
+            {
+                case "editar":
+                    EditarUsuario(Convert.ToInt32(e.CommandArgument));
+                    break;
+                    
+                case "deletar":
+                    DeletarUsuario(Convert.ToInt32(e.CommandArgument));
+                    break;
+                default:
+                    throw new Exception("Não foi possível editar ou deletar registro");                    
+            }            
+        }
+        
         #endregion
 
         #region Metodos 
@@ -51,8 +67,8 @@ namespace Fantasy.FastPay.Web.Forms
         {
             //Sessao, viewState, apllication State 
             //Session["usuarios"] = UsuarioController.ObterTodos();
-            //var usuarios = Session["usuarios"];
-            grdUsuario.DataSource = UsuarioController.ObterTodos();
+            //var usuarios = Session["usuarios"]; 
+            grdUsuario.DataSource = UsuarioController.ObterTodos();// Binding de dados
             grdUsuario.DataBind();
         }
 
@@ -79,8 +95,17 @@ namespace Fantasy.FastPay.Web.Forms
                 usuario.Nome = txtNome.Text;
                 usuario.SobreNome = txtSobreNome.Text;
 
-                UsuarioController.AdicionarUsuario(usuario);
+                if (modForm.Value.ToLower() == "incluir")
+                {
+                    UsuarioController.AdicionarUsuario(usuario);
+                }
+                else
+                {
+                    usuario.Id = Convert.ToInt32(hdUsuarioId.Value);
+                    UsuarioController.AtualizarUsuario(usuario);
+                }
 
+                
                 //aqui foi so para mostrar para vc como trabalhar ou amazenar dados na sessao, mas nao vamos precisar
                 /// disso pelo menos por enquanto...
                 /// // ta estranho do jeito que está
@@ -88,9 +113,31 @@ namespace Fantasy.FastPay.Web.Forms
                 //Session["usuarios"] = UsuarioController.ObterTodos();
 
                 grdUsuario.DataSource = UsuarioController.ObterTodos();
-                grdUsuario.DataBind();
+                grdUsuario.DataBind();                
             }
+
+            modForm.Value = "incluir";
+        }
+
+
+        private void DeletarUsuario(int usuarioId)
+        {
+            UsuarioController.DeletarUsuario(usuarioId);
+            grdUsuario.DataSource = UsuarioController.ObterTodos();
+            grdUsuario.DataBind();
+        }
+
+        private void EditarUsuario(int usuarioId)
+        {
+            var usuario = UsuarioController.ObterUsuario(usuarioId);
+            txtNome.Text = usuario.Nome;
+            txtSobreNome.Text = usuario.SobreNome;
+            
+            modForm.Value = "editar";
+            hdUsuarioId.Value = usuario.Id.ToString();
+            
         }
         #endregion 
+
     }
 }

@@ -22,10 +22,13 @@
         <br />
         <br />
         <asp:Label ID="lblMessage" runat="server" Visible="false" ForeColor="Red"> Informe os campos Nome e Sobre Nome</asp:Label>
+        <asp:HiddenField ID="modForm" runat="server" Value="incluir"  /> 
+        <asp:HiddenField ID="hdUsuarioId" runat="server" Value="" /> 
                 
     <div id="divGrid">         
         <asp:GridView ID="grdUsuario" runat="server" AutoGenerateColumns="False" CellPadding="4" 
-            EnableModelValidation="True" ForeColor="#333333" GridLines="None" Width="374px">
+            EnableModelValidation="True" ForeColor="#333333" GridLines="None" Width="374px" 
+            OnRowCommand="grdUsuario_RowCommand" DataKeyNames="Id" >
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="Nome" HeaderText="Nome">
@@ -34,6 +37,23 @@
                 <asp:BoundField DataField="SobreNome" HeaderText="Sobre Nome">
                 <HeaderStyle HorizontalAlign="Left" />
                 </asp:BoundField>
+                <asp:TemplateField ShowHeader="False">
+                    <ItemTemplate>
+                        <asp:LinkButton ID="linkEditarUsuario" runat="server" 
+                            CausesValidation="false" CommandName="editar" 
+                            CommandArgument='<%#Eval("Id")%>' Text="Editar"></asp:LinkButton>
+                    </ItemTemplate>
+                    <ItemStyle HorizontalAlign="Left" />
+                </asp:TemplateField>
+                <asp:TemplateField ShowHeader="False">
+                    <ItemTemplate>
+                        <asp:LinkButton ID="linkDeletarUsuario" runat="server" 
+                            CausesValidation="false" CommandName="deletar"  OnClientClick="return confirm('Tem certeza que deseja deletar este item ?')"
+                            CommandArgument='<%#Eval("Id") %>'                                                         
+                            Text="Deletar"></asp:LinkButton>
+                    </ItemTemplate>
+                    <ItemStyle HorizontalAlign="Left" />
+                </asp:TemplateField>
             </Columns>
             <EditRowStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
