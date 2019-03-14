@@ -20,9 +20,24 @@ namespace Fantasy.FastPay.Controller
             return _opagamentoDAO.ObterOrdens();
         }
 
-        public void AdicionarUsuario(OrdemPagamento ordempagamento)
+        public void AdicionarOrdemPagamento(OrdemPagamento ordempagamento)
         {
             _opagamentoDAO.AdicionarOrdemPagamento(ordempagamento);
+        }
+
+        public OrdemPagamento ObterOrdemPagamento(int ordemPagamentoId)
+        {
+            return _opagamentoDAO.ObterOrdemPagamento(ordemPagamentoId);  
+        }
+
+        public void AtualizarOrdemPagamento(OrdemPagamento ordemPagamento)
+        {
+            _opagamentoDAO.AtualizarOrdemPagamento(ordemPagamento);
+        }
+
+        public void DeletarOrdemPagamento(int ordemPagamentoId)
+        {
+            _opagamentoDAO.DeletarOrdemPagamento(ordemPagamentoId);
         }
     }
 }

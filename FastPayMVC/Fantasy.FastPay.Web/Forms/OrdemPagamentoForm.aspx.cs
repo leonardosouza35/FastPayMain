@@ -39,6 +39,26 @@ namespace Fantasy.FastPay.Web.Forms
             SalvarOrdemPagamento();
         }
 
+        protected void grdOrdemPagamento_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            switch (e.CommandName)
+            {
+                case "editar":
+                    EditarOrdemPagamento(Convert.ToInt32(e.CommandArgument));
+                    break;
+
+                case "deletar":
+                    DeletarOrdemPagamento(Convert.ToInt32(e.CommandArgument));
+                    break;
+                default:
+                    throw new Exception("Não foi possível editar ou deletar registro");
+            }
+        }
+
+
+
+
+
         #endregion
 
         #region METODOS
@@ -67,19 +87,19 @@ namespace Fantasy.FastPay.Web.Forms
                 ordemPagamento.CPF = txCPF.Text;
                 ordemPagamento.NumeroContrato = txNumContrato.Text;
 
-                OrdemPagamentoController.AdicionarUsuario(ordemPagamento);
-
+                if (modFormOrdemPagamento.Value.ToLower() == "incluir")
+                {
+                    OrdemPagamentoController.AdicionarOrdemPagamento(ordemPagamento);
+                }
+                else
+                {
+                    ordemPagamento.Id = Convert.ToInt32(hdOrdemPagamentoId.Value);
+                    OrdemPagamentoController.AdicionarOrdemPagamento(ordemPagamento);
+                }
+                
                 grdOrdemPagamento.DataSource = OrdemPagamentoController.ObterOrdens();
                 grdOrdemPagamento.DataBind();
             }
-        #endregion
-
-
-
-
-
-
-
             /// Agora é o seguinte
             /// Eu não quero mais este cara aqui.
             /// blz ??
@@ -92,7 +112,28 @@ namespace Fantasy.FastPay.Web.Forms
             ///  Mas eu não posso ter... um componente com o OnClick apontando para um método (Evento) que não
             ///  existe no codebehind
             ///  
-
+            modFormOrdemPagamento.Value = "incluir";
         }
+
+        private void DeletarOrdemPagamento(int ordemPagamentoId)
+        {
+            OrdemPagamentoController.DeletarOrdemPagamento(ordemPagamentoId);
+            grdOrdemPagamento.DataSource = OrdemPagamentoController.ObterOrdens();
+            grdOrdemPagamento.DataBind();
+        }
+
+
+        private void EditarOrdemPagamento(int ordemPagamentoId)
+        {
+            var ordemPagamento = OrdemPagamentoController.ObterOrdemPagamento(ordemPagamentoId);
+            txNomeCompleto.Text = ordemPagamento.NomeCompleto;
+            txCPF.Text = ordemPagamento.CPF;
+            txNumContrato.Text = ordemPagamento.NumeroContrato;
+
+            modFormOrdemPagamento.Value = "editar";
+            hdOrdemPagamentoId.Value = ordemPagamento.Id.ToString();
+        }
+
+        #endregion
     }
 }

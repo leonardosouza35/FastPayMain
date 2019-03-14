@@ -35,11 +35,15 @@
          <asp:Button ID="btnSalvarOrdemPagamento" runat="server" Text="Salvar" OnClick="btnSalvarOrdemPagamento_Click"/>
         <br />
         <br />
-                
+                        
         <asp:Label ID="lblMessage" runat="server" Visible="false" ForeColor="Red"> Informe os campos Nome Completo e RG e Numero de Contrato</asp:Label>
+        <asp:HiddenField ID="modFormOrdemPagamento" runat="server" Value="incluir"  /> 
+        <asp:HiddenField ID="hdOrdemPagamentoId" runat="server" Value="" /> 
+
     <div id="divGrid">
         <asp:GridView ID="grdOrdemPagamento" runat="server" AutoGenerateColumns="False" CellPadding="4" 
-            EnableModelValidation="True" ForeColor="#333333" GridLines="None" Width="374px">
+            EnableModelValidation="True" ForeColor="#333333" GridLines="None" Width="374px"
+            OnRowCommand="grdOrdemPagamento_RowCommand" DataKeyNames="Id">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="NomeCompleto" HeaderText="Nome Completo">
@@ -51,6 +55,23 @@
                 <asp:BoundField DataField="NumeroContrato" HeaderText="Numero de Contrato">
                 <HeaderStyle HorizontalAlign="Left" />
                 </asp:BoundField>
+                <asp:TemplateField ShowHeader="False">
+                    <ItemTemplate>
+                        <asp:LinkButton ID="linkEditarOrdemPagamento" runat="server" 
+                            CausesValidation="false" CommandName="editar" 
+                            CommandArgument='<%#Eval("Id")%>' Text="Editar"></asp:LinkButton>
+                    </ItemTemplate>
+                    <ItemStyle HorizontalAlign="Left" />
+                </asp:TemplateField>
+                <asp:TemplateField ShowHeader="False">
+                    <ItemTemplate>
+                        <asp:LinkButton ID="linkDeletarOrdemPagamento" runat="server" 
+                            CausesValidation="false" CommandName="deletar"  OnClientClick="return confirm('Tem certeza que deseja deletar este item ?')"
+                            CommandArgument='<%#Eval("Id") %>'                                                         
+                            Text="Deletar"></asp:LinkButton>
+                    </ItemTemplate>
+                    <ItemStyle HorizontalAlign="Left" />
+                </asp:TemplateField>
             </Columns>
             <EditRowStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
