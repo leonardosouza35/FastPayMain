@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Fantasy.FastPay.Domain.Entites
 {
-    class BancoPagador
+    public class BancoPagador :Entity
     {
+        public string Nome { get; set; }
     }
 }

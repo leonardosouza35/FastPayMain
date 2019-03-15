@@ -38,6 +38,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entites\BancoPagador.cs" />
     <Compile Include="Entites\Entity.cs" />
     <Compile Include="Entites\OrdemPagamento.cs" />
     <Compile Include="Entites\OrdemPagamentoPasso.cs" />
