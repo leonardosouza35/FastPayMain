@@ -1,0 +1,27 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Page.master.cs" Inherits="Fantasy.FastPay.Web.Page" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"  />
+    <link href="../../Scripts/css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <!--Aqui que sua página será renderizada -->
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            <!--Aqui que sua página será renderizada -->
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+
+    <script src="../../Scripts/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../Scripts/js/popper.min.js"></script>
+    <script src="../../Scripts/js/bootstrap/bootstrap.js"></script>
+</body>
+</html>
