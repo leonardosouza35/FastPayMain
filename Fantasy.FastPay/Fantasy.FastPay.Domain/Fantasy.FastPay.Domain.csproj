@@ -39,9 +39,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entites\BancoPagador.cs" />
+    <Compile Include="Entites\Empresa.cs" />
     <Compile Include="Entites\Entity.cs" />
+    <Compile Include="ValueObjects\OpcaoMoeda.cs" />
     <Compile Include="Entites\OrdemPagamento.cs" />
     <Compile Include="Entites\OrdemPagamentoPasso.cs" />
+    <Compile Include="ValueObjects\Pais.cs" />
+    <Compile Include="Enums\StatusOrdemEnum.cs" />
+    <Compile Include="Enums\TipoDePessoa.cs" />
+    <Compile Include="Enums\TipoDeContaEnum.cs" />
+    <Compile Include="ValueObjects\ValueObjet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entites\Usuario.cs" />
   </ItemGroup>

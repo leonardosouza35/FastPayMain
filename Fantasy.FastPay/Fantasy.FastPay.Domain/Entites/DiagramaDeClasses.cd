@@ -3,8 +3,50 @@
   <Class Name="Fantasy.FastPay.Domain.Entites.Usuario">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAACAAAAACAAAAAAAAAAAAAAICAAAAAAAAAAAAEAAAA=</HashCode>
+      <HashCode>wAAACAAAgCCAAAAEAAAAAACAISoAAAACAAAAAAEQAAg=</HashCode>
       <FileName>Entites\Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fantasy.FastPay.Domain.Entites.OrdemPagamento">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAEAAgCQACAACEAgUAAAAiMgAAAAAAAAAAABAQA=</HashCode>
+      <FileName>Entites\OrdemPagamento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fantasy.FastPay.Domain.Entites.OrdemPagamentoPasso">
+    <Position X="5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAACBAAAAAAAAAAAAAoAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Entites\OrdemPagamentoPasso.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fantasy.FastPay.Domain.Entites.Empresa">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAQAASAAAAAQAAAAAAAAAEAAAg=</HashCode>
+      <FileName>Entites\Empresa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fantasy.FastPay.Domain.Entites.BancoPagador">
+    <Position X="5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAQAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Entites\BancoPagador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fantasy.FastPay.Domain.Entites.OpcaoMoeda" Collapsed="true">
+    <Position X="7.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValueObjects\OpcaoMoeda.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fantasy.FastPay.Domain.Entites.Pais" Collapsed="true">
+    <Position X="7.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>ValueObjects\Pais.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
