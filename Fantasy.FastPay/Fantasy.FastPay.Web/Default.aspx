@@ -3,31 +3,42 @@
     
 </asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">            
+    <%--<div class="jumbotron">--%>
         <div class="container">
-            <a href="#" class="navbar-brand">FastPay</a>
-            <div class="collapse navbar-collapse" id="navbar-responsive">
-                <ul class="navbar-nav">
-                    <!--<li class="nav-item"><a class="nav-link" href="#">Item 1</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Item 2</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Item 3</a></li>-->
-                </ul>
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Entrada</a></li>                    
-                </ul>
-                <button class="btn btn-info">Cadastre-se</button>
-            </div>            
-        </div>
-    </nav>                
-        <div class="container">
-            <div class="jumbotron">
-                asdasddas
+            <div class="row" >
+                <div class="col-md-7">
+                    <h1 class="titulo text-primary mt-5">A melhor cotação para enviar ou receber dinheiro do exterior</h1>
+                    <p>Envie dinheiro para o exterior de forma rápida, direto para a conta bancária dos seus amigos e parentes. Usamos sempre o câmbio comercial, e você paga apenas uma pequena comissão.</p>
+                    <p><a class="btn btn-primary" href="#">SAIBA MAIS</a></p>
+                </div>
+
+                <div class="col-md-4 mt-5">                    
+                        <fieldset>
+                            <legend></legend>                            
+                            <h1 class="text-primary titulo-cadastro">Criar Conta</h1>
+                            <div class="form-group">
+                                <label for="txtNome">Nome</label>
+                                <%--<input type="text" id="txtNome" class="form-control" placeholder="Nome" />--%>
+                                <asp:TextBox runat="server" ID="txtNome" CssClass="form-control" placeholder="Nome" />
+                            </div>
+                            <div class="form-group">
+                                <label for="txtEmail">Email</label>
+                                <%--<input type="email" id="txtEmail" class="form-control" placeholder="Email" />--%>
+                                <asp:TextBox runat="server" ID="txtEmail" CssClass="form-control" placeholder="Email" />
+                            </div>                                                  
+                            <%--<button type="button" class="btn btn-info">Criar Conta</button>      --%>
+                            <asp:Button runat="server"  ID="btnCriarConta" OnClick="btnCriarConta_Click" CssClass="btn btn-primary btn-lg btn-block" Text="Criar Conta"/>                                         
+                            </fieldset>                                                
+                </div>
             </div>
+            
+        </div>
+    <%--</div>--%>
             <%--<div class="row">
                 <div class="col-lg-8">
                     <h1>Leo</h1>
                 </div>
             </div>--%>
-        </div>    
+        
 </asp:Content>

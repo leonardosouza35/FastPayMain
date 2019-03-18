@@ -18,11 +18,13 @@ namespace Fantasy.FastPay.Domain.Entites
         public string Email { get; set; }
         public string Senha { get; set; }
         public TipoDePessoaEnum TipoDePessoa { get; set; }
-        public string CpfOrCnpj { get; set; }
-        public string NomeEmpresa { get; set; }
-        public string Estado { get; set; }
-        public string Cidade { get; set; }
+        public string NumeroDocumento { get; set; }
+        public string NomeEmpresa { get; set; }        
         public string Cep { get; set; }
+        public string Rua { get; set; }
+        public string Bairro { get; set; }
+        public string Cidade { get; set; }
+        public string Estado { get; set; }        
         public string Telefone1 { get; set; }
         public string Telefone2 { get; set; }
         public int CodigoBanco { get; set; }

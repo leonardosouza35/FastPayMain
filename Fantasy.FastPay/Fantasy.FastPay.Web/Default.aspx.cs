@@ -13,5 +13,20 @@ namespace Fantasy.FastPay.Web
         {
 
         }
+
+        protected void btnCriarConta_Click(object sender, EventArgs e)
+        {
+            CriarConta();
+
+        }
+
+        private void CriarConta()
+        {
+            
+            Session["Nome"] = txtNome.Text;
+            Session["Email"] =  txtEmail.Text;                   
+            Response.Redirect("~/Forms/Usuario/CadastroUsuarioForm.aspx");
+
+        }
     }
 }

@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="Forms\Usuario\CadastroUsuarioForm.aspx" />
     <Content Include="Scripts\css\bootstrap\bootstrap.css" />
     <Content Include="Scripts\css\bootstrap\bootstrap.min.css" />
     <Content Include="Scripts\css\custom.min.css" />
@@ -64,6 +65,8 @@
     <Content Include="Scripts\js\bootstrap\bootstrap.min.js" />
     <Content Include="Scripts\js\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\js\popper.min.js" />
+    <Content Include="Scripts\teste-custom\custom.js" />
+    <Content Include="Scripts\teste-custom\custom.min.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -81,12 +84,18 @@
     <Compile Include="Forms\Master\Page.Master.designer.cs">
       <DependentUpon>Page.Master</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Usuario\CadastroUsuarioForm.aspx.cs">
+      <DependentUpon>CadastroUsuarioForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Usuario\CadastroUsuarioForm.aspx.designer.cs">
+      <DependentUpon>CadastroUsuarioForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Forms\OrdemPagamento\" />
-    <Folder Include="Forms\Usuario\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\js\bootstrap\bootstrap.bundle.js.map" />
