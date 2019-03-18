@@ -24,6 +24,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2 - Mobile", "5.2 - Mobile", "{3A570312-2812-4675-A3A4-76CDF4743379}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fantasy.FastPay.Web", "Fantasy.FastPay.Web\Fantasy.FastPay.Web.csproj", "{8EDAA4A7-4051-4942-921D-09BDE6184227}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C28E8F5B-92F7-4AF8-A5E6-56530527A7F9} = {C28E8F5B-92F7-4AF8-A5E6-56530527A7F9}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fantasy.FastPay.Infra.Data", "Fantasy.FastPay.Infra.Data\Fantasy.FastPay.Infra.Data.csproj", "{93EE7C41-1BD3-4DE6-A4CB-1C62711B3413}"
 EndProject
