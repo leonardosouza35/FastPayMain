@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Forms/Master/Page.Master" AutoEventWireup="true" CodeBehind="CadastroUsuarioForm.aspx.cs" Inherits="Fantasy.FastPay.Web.Forms.Usuario.CadastroUsuarioForm" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Forms/Master/Page.Master" AutoEventWireup="true" CodeBehind="CadastroUsuarioForm.aspx.cs" Inherits="Fantasy.FastPay.Web.Forms.CadastroUsuarioForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

@@ -23,6 +23,7 @@ namespace Fantasy.FastPay.Web
         private void CriarConta()
         {
             //HttpContext.Current.a
+
             Session["Nome"] = txtNome.Text;
             Session["Email"] =  txtEmail.Text;                   
             Response.Redirect("~/Forms/Usuario/CadastroUsuarioForm.aspx");

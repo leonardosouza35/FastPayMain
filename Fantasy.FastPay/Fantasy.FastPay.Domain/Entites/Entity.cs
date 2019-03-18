@@ -16,9 +16,9 @@ namespace Fantasy.FastPay.Domain.Entites
             ValidationMessages.Add(message);
         }
 
-        protected bool IsValidated()
+        public bool IsValidated
         {
-            return ValidationMessages.Count == 0;
+          get{ return ValidationMessages.Count == 0;}   
         }
         public abstract void Validate();
         

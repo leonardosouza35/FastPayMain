@@ -109,6 +109,20 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fantasy.FastPay.Application\Fantasy.FastPay.Application.csproj">
+      <Project>{c28e8f5b-92f7-4af8-a5e6-56530527a7f9}</Project>
+      <Name>Fantasy.FastPay.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fantasy.FastPay.Domain\Fantasy.FastPay.Domain.csproj">
+      <Project>{b3b3bb14-8d83-4f35-a42c-bba25b5fcfa2}</Project>
+      <Name>Fantasy.FastPay.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fantasy.FastPay.Infra.Data\Fantasy.FastPay.Infra.Data.csproj">
+      <Project>{93ee7c41-1bd3-4de6-a4cb-1c62711b3413}</Project>
+      <Name>Fantasy.FastPay.Infra.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

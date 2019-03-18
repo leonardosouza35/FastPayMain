@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Fantasy.FastPay.Web.Forms.Usuario {
+namespace Fantasy.FastPay.Web.Forms {
     
     
     public partial class CadastroUsuarioForm {
