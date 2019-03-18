@@ -24,6 +24,15 @@ namespace Fantasy.FastPay.Domain.Entites
         public decimal TaxaCambioEmpresa { get; private set; }      
         public StatusOrdemEnum StatusOrdem { get; set; }
 
+        public ICollection<OrdemPagamentoPasso> OrdensPagamentoPasso { get; private set; }
+        private void AdicionarPasso(OrdemPagamentoPasso passo)
+        {
+            if (passo == null)
+                AddValidationMessage("Ordem Pagamento Passo não pode ser nulo");
+                        
+            passo.Validate();
+        }
+
         public void SetEmpresa(Empresa empresa ){
             if (empresa == null)
                 AddValidationMessage("Informe uma empresa");
@@ -39,6 +48,8 @@ namespace Fantasy.FastPay.Domain.Entites
 
         public override void Validate()
         {
+            ClearValidationMessages();
+
             if (OpcaoMoedaIdOrigem == 0)
                 AddValidationMessage("Não foi possível identifiar a modeda  de origem");
 
@@ -53,9 +64,11 @@ namespace Fantasy.FastPay.Domain.Entites
 
             if (Empresa == null)
                 AddValidationMessage("É necessário saber qual a empresa está enviando a remessa");
-
+            
             if (TaxaCambioEmpresa == 0)
+            {                
                 AddValidationMessage("Não foi possível identificar qual é a taxa de cambio praticado");
+            }
         }
     }
 }

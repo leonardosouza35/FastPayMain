@@ -31,7 +31,7 @@
                 </ul>                
             </div>            
         </div>
-    </nav>                
+       </nav>                
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             <!--Aqui que sua página será renderizada -->
         </asp:ContentPlaceHolder>
@@ -39,6 +39,7 @@
     <script src="../../Scripts/js/jquery-3.3.1.slim.min.js"></script>
     <script src="../../Scripts/js/popper.min.js"></script>
     <script src="../../Scripts/js/bootstrap/bootstrap.js"></script>   
+    <script src="../../Scripts/js/bootstrap/custom.js"></script>
    </form>    
 </body>
 </html>

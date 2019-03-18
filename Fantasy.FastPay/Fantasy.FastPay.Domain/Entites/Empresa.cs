@@ -12,7 +12,8 @@ namespace Fantasy.FastPay.Domain.Entites
     {
         public DateTime DataCadastro { get; set; }
         public string Nome { get; set; }
-        public int  PaisOrigem { get; set; }
+        public Pais Pais { get; set; }
+        public int  PaisOrigemId { get; set; }
         public string Estado { get; set; }
         public string Cidade { get; set; }        
         public decimal PercentualCalculoTaxa { get; set; }
