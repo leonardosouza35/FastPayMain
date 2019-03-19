@@ -41,10 +41,14 @@
     <Compile Include="Entites\BancoPagador.cs" />
     <Compile Include="Entites\Empresa.cs" />
     <Compile Include="Entites\Entity.cs" />
+    <Compile Include="Entites\Estado.cs" />
+    <Compile Include="Interfaces\Repositories\IEstadoRepository.cs" />
     <Compile Include="Interfaces\Repositories\IRepositoryBase.cs" />
     <Compile Include="Interfaces\Repositories\IUsuarioRepository.cs" />
+    <Compile Include="Interfaces\Services\IEstadoService.cs" />
     <Compile Include="Interfaces\Services\IServiceBase.cs" />
     <Compile Include="Interfaces\Services\IUsuarioService.cs" />
+    <Compile Include="Services\EstadoService.cs" />
     <Compile Include="Services\ServiceBase.cs" />
     <Compile Include="Services\UsuarioService.cs" />
     <Compile Include="ValueObjects\OpcaoMoeda.cs" />

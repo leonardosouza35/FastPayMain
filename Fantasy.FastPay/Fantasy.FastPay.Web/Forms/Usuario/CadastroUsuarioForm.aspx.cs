@@ -31,6 +31,7 @@ namespace Fantasy.FastPay.Web.Forms
         }
 
         private void SalvarUsuario(){
+
             var usuario = new Usuario();
 
             var usuarioRepository = new UsuarioRepository();

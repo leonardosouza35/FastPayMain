@@ -30,7 +30,31 @@ namespace Fantasy.FastPay.Infra.Data.Repositories
                 _sqlCommand = new SqlCommand(sqlQueryOrProc, SqlConnection);
                 _sqlCommand.Parameters.AddRange(parameters.ToArray());
                 return _sqlCommand.ExecuteReader();
+                
+            }catch(Exception ex){
+                throw ex;            
             }finally{
+                SqlConnection.Close();
+            }
+
+        }
+
+        protected int ExecuteNoQuery(string sqlQueryOrProc, params SqlParameter[] parameters)
+        {
+            try
+            {
+                SqlConnection.Open();
+                _sqlCommand = new SqlCommand(sqlQueryOrProc, SqlConnection);
+                _sqlCommand.Parameters.AddRange(parameters.ToArray());
+                return _sqlCommand.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
                 SqlConnection.Close();
             }
 
