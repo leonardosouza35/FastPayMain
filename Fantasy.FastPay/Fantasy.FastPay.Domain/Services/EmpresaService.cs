@@ -8,18 +8,38 @@ using System.Text;
 
 namespace Fantasy.FastPay.Domain.Services
 {
-    public class EmpresaService : ServiceBase<Empresa>, IEmpresaService
+    public class EmpresaService: ServiceBase<Empresa>, IEmpresaService
     {
         private readonly IEmpresaRepository _empresaRepository;
-        
-        public EmpresaService(IEmpresaRepository empresaRepository) :base(empresaRepository)
+        public EmpresaService(IEmpresaRepository empresaRepository): base(empresaRepository)
         {
             _empresaRepository = empresaRepository;
+        }
+
+        public List<Empresa> ObterTodasAsEmpresas()
+        {
+            return _empresaRepository.ObterTodasAsEmpresas();
+        }
+
+
+        public Empresa ObterPorId(int empresaId)
+        {
+            return _empresaRepository.ObterPorId(empresaId);
         }
 
         public void Adicionar(Empresa empresa)
         {
             _empresaRepository.Adicionar(empresa);
+        }
+
+        public void Atualizar(Empresa empresa)
+        {
+            _empresaRepository.Atualizar(empresa);
+        }
+
+        public void Remover(Empresa empresa)
+        {
+            _empresaRepository.Remover(empresa);
         }
     }
 }

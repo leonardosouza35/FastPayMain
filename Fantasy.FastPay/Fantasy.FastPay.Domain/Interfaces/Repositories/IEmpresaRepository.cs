@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Fantasy.FastPay.Domain.Interfaces.Services
+namespace Fantasy.FastPay.Domain.Interfaces.Repositories
 {
-    public interface IEmpresaService: IServiceBase<Empresa>
+    public interface IEmpresaRepository: IRepositoryBase<Empresa>
     {
         List<Empresa> ObterTodasAsEmpresas();
         Empresa ObterPorId(int empresaId);

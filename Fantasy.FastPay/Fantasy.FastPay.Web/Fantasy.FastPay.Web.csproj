@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="Forms\Empresa\EmpresaForm.aspx" />
     <Content Include="Forms\Estado\EstadoForm.aspx" />
     <Content Include="Forms\Usuario\CadastroUsuarioForm.aspx" />
     <Content Include="Scripts\css\bootstrap\bootstrap.css" />
@@ -76,6 +77,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Empresa\EmpresaForm.aspx.cs">
+      <DependentUpon>EmpresaForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Empresa\EmpresaForm.aspx.designer.cs">
+      <DependentUpon>EmpresaForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\Estado\EstadoForm.aspx.cs">
       <DependentUpon>EstadoForm.aspx</DependentUpon>
