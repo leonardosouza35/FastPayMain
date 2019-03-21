@@ -14,8 +14,8 @@ namespace Fantasy.FastPay.Domain.Entites
         public string Nome { get; set; }
         public Pais Pais { get; set; }
         public int  PaisOrigemId { get; set; }
-        public string Estado { get; set; }
-        public string Cidade { get; set; }        
+        public int EstadoId { get; set; }
+        public int CidadeId { get; set; }        
         public decimal PercentualCalculoTaxa { get; set; }
 
         public override void Validate()

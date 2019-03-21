@@ -24,46 +24,33 @@ namespace Fantasy.FastPay.Infra.Data.Repositories
 
         protected SqlDataReader ExecuteReader(string sqlQueryOrProc, params SqlParameter[] parameters)
         {
-            try
-            {
-                SqlConnection.Open();
-                _sqlCommand = new SqlCommand(sqlQueryOrProc, SqlConnection);
-                _sqlCommand.Parameters.AddRange(parameters.ToArray());
-                return _sqlCommand.ExecuteReader();
-                
-            }catch(Exception ex){
-                throw ex;            
-            }finally{
-                SqlConnection.Close();
-            }
-
+            
+            _sqlCommand = new SqlCommand(sqlQueryOrProc, SqlConnection);
+            _sqlCommand.Parameters.AddRange(parameters.ToArray());
+            return _sqlCommand.ExecuteReader();                            
         }
 
         protected int ExecuteNoQuery(string sqlQueryOrProc, params SqlParameter[] parameters)
         {
-            try
-            {
-                SqlConnection.Open();
-                _sqlCommand = new SqlCommand(sqlQueryOrProc, SqlConnection);
-                _sqlCommand.Parameters.AddRange(parameters.ToArray());
-                return _sqlCommand.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-            finally
-            {
-                SqlConnection.Close();
-            }
-
+            _sqlCommand = new SqlCommand(sqlQueryOrProc, SqlConnection);
+            _sqlCommand.Parameters.AddRange(parameters.ToArray());
+            return _sqlCommand.ExecuteNonQuery();                                        
         }
 
         public void Dispose()
         {
             _sqlConnection.Dispose();
             _sqlCommand.Dispose();
+        }
+
+        protected void OpenConnection()
+        {
+            SqlConnection.Open();
+        }
+
+        protected void CloseConnection()
+        {
+            SqlConnection.Close();
         }
     }
 }
