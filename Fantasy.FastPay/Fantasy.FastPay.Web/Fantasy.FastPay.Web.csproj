@@ -56,6 +56,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Forms\Empresa\EmpresaForm.aspx" />
     <Content Include="Forms\Estado\EstadoForm.aspx" />
+    <Content Include="Forms\OrdemPagamento\OrdemPagamentoPassoForm.aspx" />
     <Content Include="Forms\Usuario\CadastroUsuarioForm.aspx" />
     <Content Include="Scripts\css\bootstrap\bootstrap.css" />
     <Content Include="Scripts\css\bootstrap\bootstrap.min.css" />
@@ -99,6 +100,13 @@
     <Compile Include="Forms\Master\Page.Master.designer.cs">
       <DependentUpon>Page.Master</DependentUpon>
     </Compile>
+    <Compile Include="Forms\OrdemPagamento\OrdemPagamentoPassoForm.aspx.cs">
+      <DependentUpon>OrdemPagamentoPassoForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\OrdemPagamento\OrdemPagamentoPassoForm.aspx.designer.cs">
+      <DependentUpon>OrdemPagamentoPassoForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Usuario\CadastroUsuarioForm.aspx.cs">
       <DependentUpon>CadastroUsuarioForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -110,7 +118,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Forms\OrdemPagamento\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\js\bootstrap\bootstrap.bundle.js.map" />
