@@ -1,6 +1,7 @@
 ﻿using Fantasy.FastPay.Application.Interfaces;
 using Fantasy.FastPay.Domain.Entites;
 using Fantasy.FastPay.Domain.Interfaces.Services;
+using Fantasy.FastPay.Domain.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;

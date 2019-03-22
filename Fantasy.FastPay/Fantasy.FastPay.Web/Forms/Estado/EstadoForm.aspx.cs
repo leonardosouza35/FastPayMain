@@ -21,7 +21,7 @@ namespace Fantasy.FastPay.Web.Forms.Estado
 
             var appAppService = new EstadoAppService(estadoService);
 
-            var estado = new Domain.Entites.Estado();
+            var estado = new Domain.ValueObjects.Estado();
             
             appAppService.Adicionar(estado);
         }

@@ -6,7 +6,7 @@ go
 insert into OpcaoMoeda(Nome,Descricao) values('$','US Dollar');
 insert into OpcaoMoeda(Nome,Descricao) values('R$','Real');
 
---Paises
+--Paises 
 insert into Paises(Nome, DataCadastro) values('EUA', CURRENT_TIMESTAMP);
 insert into Paises(Nome, DataCadastro) values('Brasil',CURRENT_TIMESTAMP);
 
