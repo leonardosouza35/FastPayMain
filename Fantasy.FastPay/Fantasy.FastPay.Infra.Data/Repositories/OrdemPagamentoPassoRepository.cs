@@ -1,4 +1,5 @@
 ﻿using Fantasy.FastPay.Domain.Entites;
+using Fantasy.FastPay.Domain.Enums;
 using Fantasy.FastPay.Domain.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,7 @@ namespace Fantasy.FastPay.Infra.Data.Repositories
                         ordemPagamentoPasso.Descricao = dataReader["Descricao"] as string;
                         ordemPagamentoPasso.OrdemPagamentoId = Convert.ToInt32(dataReader["OrdemPagamentoId"]);
                         ordemPagamentoPasso.UsuarioId = Convert.ToInt32(dataReader["UsuarioId"]);
-                        //ordemPagamentoPasso.StatusOrdem = dataReader["StatusOrdem"];
+                        ordemPagamentoPasso.StatusOrdem = (StatusOrdemEnum)Convert.ToInt32(dataReader["StatusOrdem"]);
                         //ordemPagamentoPasso.PercentualCalculoTaxa = Convert.ToDecimal(dataReader["PercentualCalculoTaxa"]);
 
                         listaOrdensPagamentoPasso.Add(ordemPagamentoPasso);
