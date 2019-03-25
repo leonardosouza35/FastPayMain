@@ -45,9 +45,11 @@ namespace Fantasy.FastPay.Web.Forms.Pais
             switch (e.CommandName)
             {
                 case "Editar":
+                    EditarPais(Convert.ToInt32(e.CommandArgument));
                     break;
 
                 case "Remover":
+                    RemoverPais(Convert.ToInt32(e.CommandArgument));
                     break;
 
                 default:
@@ -55,6 +57,8 @@ namespace Fantasy.FastPay.Web.Forms.Pais
                     break;
             }
         }
+
+        
 
         #endregion
 
@@ -76,15 +80,31 @@ namespace Fantasy.FastPay.Web.Forms.Pais
             }
             else
             {
-                var nome = txtNome.Text;
-                var descricao = txtDescricao.Text;
-                var pais = new Domain.Entites.Pais();
-                pais.Nome = nome;
-                pais.Descricao = descricao;
-                PaisAppService.Adicionar(pais);                
+
+                if (Session["modo"] == "Edicao")
+                {
+                    var paisId = Convert.ToInt32(Session["PaisId"]);
+                    var pais = new Domain.Entites.Pais();
+
+                    pais.Id = paisId;
+                    pais.Nome = txtNome.Text;
+                    pais.Descricao = txtDescricao.Text;
+
+                    PaisAppService.Atualizar(pais);                    
+                }
+                else
+                {
+                    var nome = txtNome.Text;
+                    var descricao = txtDescricao.Text;
+                    var pais = new Domain.Entites.Pais();
+                    pais.Nome = nome;
+                    pais.Descricao = descricao;
+                    PaisAppService.Adicionar(pais);                                    
+                }
+
                 CarregarPaises();
                 LimparCampos();
-                
+                Session["modo"] = "Incluir";
             }            
         }
 
@@ -93,6 +113,26 @@ namespace Fantasy.FastPay.Web.Forms.Pais
             txtNome.Text = "";
             txtDescricao.Text = "";
             txtNome.Focus();
+        }
+
+        private void RemoverPais(int paisId)
+        {
+            var pais = new Domain.Entites.Pais(); // so estou fazendo isso aqui pq o método Remover só aceita instância da classe Pais
+            pais.Id = paisId; // Mas nada me impede tbm de criar ou um outro método de Remover que aceite o id de pais. Só alterar e testar
+            
+            PaisAppService.Remover(pais);
+
+            CarregarPaises();
+        }
+
+        private void EditarPais(int paisId)
+        {
+            Session["modo"] = "Edicao"; // Utilizando a sessão para controlar se tela esta no estado de inclusão ou edição
+            Session["PaisId"] = paisId;// Mas existem outras maneiras de controlar isso tbm redirecionando por exemplo para outra tela... uma  tela só de edição
+            var pais = PaisAppService.ObterPorId(paisId);
+
+            txtNome.Text = pais.Nome;
+            txtDescricao.Text = pais.Descricao;
         }
 
         #endregion

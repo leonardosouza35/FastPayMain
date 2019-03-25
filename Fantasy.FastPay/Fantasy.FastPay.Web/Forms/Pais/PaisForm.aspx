@@ -44,13 +44,13 @@
                         <asp:BoundField DataField="Descricao" HeaderText="Descrição" />
                         <asp:TemplateField ShowHeader="False">
                             <ItemTemplate>
-                                <asp:LinkButton ID="lkEditar" runat="server" CausesValidation="false" CommandName="" Text="Editar" CommandArgument='<%#Eval("Id") %>'></asp:LinkButton>
+                                <asp:LinkButton ID="lkEditar" runat="server" CausesValidation="false" CommandName="Editar" Text="Editar" CommandArgument='<%#Eval("Id") %>'></asp:LinkButton>
                             </ItemTemplate>
                             <ItemStyle Width="10px" />
                         </asp:TemplateField>
                         <asp:TemplateField ShowHeader="False">
                             <ItemTemplate>
-                                <asp:LinkButton ID="lkRemove" runat="server" CausesValidation="false" CommandName="" Text="Remover"></asp:LinkButton>
+                                <asp:LinkButton ID="lkRemove" runat="server" CausesValidation="false" CommandName="Remover" Text="Remover" CommandArgument='<%#Eval("Id") %>' OnClientClick="return confirm('Deseja realmente remover este registro do sistema?')"></asp:LinkButton>
                             </ItemTemplate>
                             <ItemStyle Width="10px" />
                         </asp:TemplateField>

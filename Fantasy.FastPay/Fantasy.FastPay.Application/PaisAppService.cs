@@ -27,12 +27,12 @@ namespace Fantasy.FastPay.Application
 
         public void Atualizar(Pais pais)
         {
-            throw new NotImplementedException();
+            _paisService.Atualizar(pais);
         }
 
         public void Remover(Pais pais)
         {
-            throw new NotImplementedException();
+            _paisService.Remover(pais);
         }
 
         public List<Pais> ObterTodos()
