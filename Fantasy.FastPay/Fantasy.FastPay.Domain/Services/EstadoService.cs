@@ -11,16 +11,35 @@ namespace Fantasy.FastPay.Domain.Services
 {
     public class EstadoService : ServiceBase<Estado>, IEstadoService
     {
-        private readonly IEstadoRepository _repository;
-
-        public EstadoService(IEstadoRepository repository) : base(repository)
+        private readonly IEstadoRepository _estadoRepository;
+        public EstadoService(IEstadoRepository estadoRepository) : base(estadoRepository)
         {
-            _repository = repository;
+            _estadoRepository = estadoRepository;
         }
 
         public void Adicionar(Estado estado)
         {
-            _repository.Adicionar(estado);
+            _estadoRepository.Adicionar(estado);
+        }
+
+        public List<Estado> ObterTodosOsEstados()
+        {
+            return _estadoRepository.ObterTodosOsEstados();
+        }
+
+        public Estado ObterPorId(int estadoId)
+        {
+            return _estadoRepository.ObterPorId(estadoId);
+        }
+
+        public void Atualizar(Estado estado)
+        {
+            _estadoRepository.Atualizar(estado);
+        }
+
+        public void Remover(Estado estado)
+        {
+            _estadoRepository.Remover(estado);
         }
     }
 }

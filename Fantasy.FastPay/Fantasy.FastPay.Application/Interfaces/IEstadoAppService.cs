@@ -9,6 +9,10 @@ namespace Fantasy.FastPay.Application.Interfaces
 {
     public interface IEstadoAppService : IAppServiceBase<Estado>
     {
+        List<Estado> ObterTodosOsEstados();
+        Estado ObterPorId(int estadoId);
         void Adicionar(Estado estado);
+        void Atualizar(Estado estado);
+        void Remover(Estado estado);
     }
 }
