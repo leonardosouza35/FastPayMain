@@ -26,19 +26,19 @@ namespace Fantasy.FastPay.Web.Forms
         private void CarregarCampos()
         {
             
-            txtNome.Text =  Session["Nome"].ToString();            
-            txtEmail.Text = Session["Email"].ToString();                        
+            //txtNome.Text =  Session["Nome"].ToString();            
+            //txtEmail.Text = Session["Email"].ToString();                        
         }
 
         private void SalvarUsuario(){
 
-            var usuario = new Usuario();
+            //var usuario = new Usuario();
 
-            var usuarioRepository = new UsuarioRepository();
-            var usuarioService = new UsuarioService(usuarioRepository);            
-            var usuarioAppService = new UsuarioAppService(usuarioService);
+            //var usuarioRepository = new UsuarioRepository();
+            //var usuarioService = new UsuarioService(usuarioRepository);            
+            //var usuarioAppService = new UsuarioAppService(usuarioService);
 
-            usuarioAppService.Adicionar(usuario);
+            //usuarioAppService.Adicionar(usuario);
 
             //if(!usuarioAppService.IsValidated)
             //       usuarioAppService.ValidationMessages

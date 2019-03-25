@@ -37,7 +37,7 @@ namespace Fantasy.FastPay.Domain.Entites
                   
         public override void Validate()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
        
     }

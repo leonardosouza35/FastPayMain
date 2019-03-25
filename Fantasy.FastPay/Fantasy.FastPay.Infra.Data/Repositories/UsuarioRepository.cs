@@ -13,29 +13,29 @@ namespace Fantasy.FastPay.Infra.Data.Repositories
         
         public Usuario ObterUsuarioPor(string nome)
         {
-            SqlParameter param1 = new SqlParameter();
+            //SqlParameter param1 = new SqlParameter();
 
-            var reader = ExecuteReader("select * from...", param1);
+            //var reader = ExecuteReader("select * from...", param1);
 
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
+            //if (reader.HasRows)
+            //{
+            //    while (reader.Read())
+            //    {
 
-                }
-            }
+            //    }
+            //}
                         
             return new Usuario();
         }
 
         public void Adicionar(Usuario usuario)
         {
-            var sql = "";
-            var reader = ExecuteReader(sql);
-            if (reader.HasRows)
-            {
+            //var sql = "";
+            //var reader = ExecuteReader(sql);
+            //if (reader.HasRows)
+            //{
                 
-            }
+            //}
         }
     }
 }

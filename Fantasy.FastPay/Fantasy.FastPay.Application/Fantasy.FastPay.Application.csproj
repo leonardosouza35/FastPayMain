@@ -45,7 +45,9 @@
     <Compile Include="Interfaces\IEstadoAppService.cs" />
     <Compile Include="Interfaces\IOrdemPagamentoPassoAppService.cs" />
     <Compile Include="Interfaces\IUsuarioAppService.cs" />
+    <Compile Include="Interfaces\IPaisAppService.cs" />
     <Compile Include="OrdemPagamentoPassoAppService.cs" />
+    <Compile Include="PaisAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EstadoAppService.cs" />
     <Compile Include="UsuarioAppService.cs" />

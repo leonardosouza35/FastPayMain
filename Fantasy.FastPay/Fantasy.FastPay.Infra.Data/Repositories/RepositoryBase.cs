@@ -33,6 +33,7 @@ namespace Fantasy.FastPay.Infra.Data.Repositories
         protected int ExecuteNoQuery(string sqlQueryOrProc, params SqlParameter[] parameters)
         {
             _sqlCommand = new SqlCommand(sqlQueryOrProc, SqlConnection);
+            _sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
             _sqlCommand.Parameters.AddRange(parameters.ToArray());
             return _sqlCommand.ExecuteNonQuery();                                        
         }
@@ -52,5 +53,6 @@ namespace Fantasy.FastPay.Infra.Data.Repositories
         {
             SqlConnection.Close();
         }
+        
     }
 }

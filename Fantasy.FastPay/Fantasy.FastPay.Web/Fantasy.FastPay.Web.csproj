@@ -57,6 +57,7 @@
     <Content Include="Forms\Empresa\EmpresaForm.aspx" />
     <Content Include="Forms\Estado\EstadoForm.aspx" />
     <Content Include="Forms\OrdemPagamento\OrdemPagamentoPassoForm.aspx" />
+    <Content Include="Forms\Pais\PaisForm.aspx" />
     <Content Include="Forms\Usuario\CadastroUsuarioForm.aspx" />
     <Content Include="Scripts\css\bootstrap\bootstrap.css" />
     <Content Include="Scripts\css\bootstrap\bootstrap.min.css" />
@@ -106,6 +107,13 @@
     </Compile>
     <Compile Include="Forms\OrdemPagamento\OrdemPagamentoPassoForm.aspx.designer.cs">
       <DependentUpon>OrdemPagamentoPassoForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pais\PaisForm.aspx.cs">
+      <DependentUpon>PaisForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Pais\PaisForm.aspx.designer.cs">
+      <DependentUpon>PaisForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\Usuario\CadastroUsuarioForm.aspx.cs">
       <DependentUpon>CadastroUsuarioForm.aspx</DependentUpon>

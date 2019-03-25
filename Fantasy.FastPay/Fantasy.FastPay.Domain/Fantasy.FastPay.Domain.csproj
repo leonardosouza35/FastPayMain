@@ -41,6 +41,9 @@
     <Compile Include="Entites\BancoPagador.cs" />
     <Compile Include="Entites\Empresa.cs" />
     <Compile Include="Entites\Entity.cs" />
+    <Compile Include="Interfaces\Repositories\IPaisRepository.cs" />
+    <Compile Include="Interfaces\Services\IPaisService.cs" />
+    <Compile Include="Services\PaisService.cs" />
     <Compile Include="ValueObjects\Estado.cs" />
     <Compile Include="Interfaces\Repositories\IEmpresaRepository.cs" />
     <Compile Include="Interfaces\Repositories\IEstadoRepository.cs" />
