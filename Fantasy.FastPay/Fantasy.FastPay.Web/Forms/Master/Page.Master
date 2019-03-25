@@ -32,10 +32,15 @@
 
                 </ul>
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <%--<a class="nav-link" href="#" runat="server" id="lkEntrar" onclick="">Entrar</a>--%>
-                        <asp:LinkButton runat="server" ID="lkEntrar" CssClass="nav-link" OnClick="lkEntrar_Click"  Text="Entrar"/>
-                    </li>                    
+
+                    <% if (Session["USER-LOGADO"] == null) { %>
+                        <li class="nav-item">
+                            <%--<a class="nav-link" href="#" runat="server" id="lkEntrar" onclick="">Entrar</a>--%>
+                            <asp:LinkButton runat="server" ID="lkEntrar" CssClass="nav-link" OnClick="lkEntrar_Click"  Text="Entrar"/>
+                        </li>                    
+                    
+                    <% } %>                                                            
+                    
                     <% if (Session["USER-LOGADO"] != null && ((Fantasy.FastPay.Domain.Entites.Usuario)Session["USER-LOGADO"]).EhAdministrador) { %>
                         <li class="nav-item">                        
                           <asp:LinkButton runat="server" ID="lbSair" CssClass="nav-link" OnClick="lbSair_Click"  Text="Sair"/>
