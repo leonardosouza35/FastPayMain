@@ -70,7 +70,9 @@
     <Content Include="Scripts\js\bootstrap\custom.js" />
     <Content Include="Scripts\js\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\js\popper.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Default.aspx.cs">
