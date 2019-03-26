@@ -56,6 +56,7 @@
   <ItemGroup>
     <Content Include="Scripts\CargaDeDados.sql" />
     <Content Include="Scripts\CriacaoTabelas.sql" />
+    <Content Include="Scripts\Pais\alter-table-usuario.sql" />
     <Content Include="Scripts\Pais\ProcedurePais.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

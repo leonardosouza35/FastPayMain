@@ -29,5 +29,32 @@ namespace Fantasy.FastPay.Application
                 IsValidated = usuario.IsValidated; 
             }
         }
+
+
+        public List<Usuario> ObterTodos()
+        {
+            return _usuarioService.ObterTodos();
+        }
+
+        public Usuario ObterPorId(int usuarioId)
+        {
+            return _usuarioService.ObterPorId(usuarioId);
+        }
+
+        public void Atualizar(Usuario usuario)
+        {
+            _usuarioService.Atualizar(usuario);
+        }
+
+        public void Remover(Usuario usuario)
+        {
+            _usuarioService.Remover(usuario);
+        }
+
+
+        public Usuario ObterPor(string email, string senha)
+        {
+            return _usuarioService.ObterPor(email, senha);
+        }
     }
 }

@@ -56,6 +56,8 @@
     <Content Include="Default.aspx" />
     <Content Include="Forms\Empresa\EmpresaForm.aspx" />
     <Content Include="Forms\Estado\EstadoForm.aspx" />
+    <Content Include="Forms\InicioForm.aspx" />
+    <Content Include="Forms\LoginForm.aspx" />
     <Content Include="Forms\OrdemPagamento\OrdemPagamentoPassoForm.aspx" />
     <Content Include="Forms\Pais\PaisForm.aspx" />
     <Content Include="Forms\Usuario\CadastroUsuarioForm.aspx" />
@@ -95,6 +97,20 @@
     </Compile>
     <Compile Include="Forms\Estado\EstadoForm.aspx.designer.cs">
       <DependentUpon>EstadoForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InicioForm.aspx.cs">
+      <DependentUpon>InicioForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\InicioForm.aspx.designer.cs">
+      <DependentUpon>InicioForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoginForm.aspx.cs">
+      <DependentUpon>LoginForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginForm.aspx.designer.cs">
+      <DependentUpon>LoginForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\Master\Page.Master.cs">
       <DependentUpon>Page.Master</DependentUpon>

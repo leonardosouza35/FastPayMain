@@ -32,6 +32,7 @@ namespace Fantasy.FastPay.Domain.Entites
         public string Agencia { get; set; }
         public TipoContaEnum TipoDeConta { get; set; }
         public string NumeroDaConta { get; set; }
+        public bool EhAdministrador { get; set; }
 
         public List<OrdemPagamento> Ordens { get; set; }
                   

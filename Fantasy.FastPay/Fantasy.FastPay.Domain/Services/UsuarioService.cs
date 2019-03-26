@@ -21,5 +21,33 @@ namespace Fantasy.FastPay.Domain.Services
         {
             _usuarioRepository.Adicionar(usuario);
         }
+
+
+        public List<Usuario> ObterTodos()
+        {
+            return _usuarioRepository.ObterTodos();
+        }
+
+        public Usuario ObterPorId(int usuarioId)
+        {
+            return _usuarioRepository.ObterPorId(usuarioId);
+        }
+
+        public void Atualizar(Usuario usuario)
+        {
+            _usuarioRepository.Atualizar(usuario);
+        }
+
+        public void Remover(Usuario usuario)
+        {
+            _usuarioRepository.Remover(usuario);
+
+        }
+
+
+        public Usuario ObterPor(string email, string senha)
+        {
+            return _usuarioRepository.ObterPor(email, senha);
+        }
     }
 }

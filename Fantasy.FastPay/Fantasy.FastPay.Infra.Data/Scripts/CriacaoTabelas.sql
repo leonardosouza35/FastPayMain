@@ -50,6 +50,7 @@ create table Usuarios(
 	Id int not null identity primary key,
 	Nome varchar(50) not null,
 	SobreNome varchar(50) not null,
+	Email varchar(100) not null,
 	Senha varchar(100) not null,
 	TipoPessoaId int not null references TipoPessoa(Id),
 	NumeroDocumento varchar(50) not null,
