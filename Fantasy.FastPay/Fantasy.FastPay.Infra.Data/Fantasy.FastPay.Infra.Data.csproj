@@ -56,8 +56,10 @@
   <ItemGroup>
     <Content Include="Scripts\CargaDeDados.sql" />
     <Content Include="Scripts\CriacaoTabelas.sql" />
-    <Content Include="Scripts\Pais\alter-table-usuario.sql" />
+    <Content Include="Scripts\Usuario\alter-table-usuario.sql" />
     <Content Include="Scripts\Pais\ProcedurePais.sql" />
+    <Content Include="Scripts\Usuario\AdicionarColuna.sql" />
+    <Content Include="Scripts\Usuario\spObterUsuario.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
