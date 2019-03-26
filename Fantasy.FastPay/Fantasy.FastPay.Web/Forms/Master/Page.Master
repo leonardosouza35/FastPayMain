@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head runat="server">
+<head id="Head1" runat="server">
     <title></title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"  />
@@ -21,10 +21,13 @@
         <div class="container">
             <a href="#" class="navbar-brand">FastPay</a>
             <div class="collapse navbar-collapse" id="navbar-responsive">
-                <ul class="navbar-nav">
-                    <li class="nav-item active"><a class="nav-link" href="#">Enviar Remessa Agora!</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Remessas Cadastradas</a></li>
-
+                <ul class="navbar-nav">                    
+                    <% if(Session["USER-LOGADO"] != null){ %>
+                        <div> </div><li class="nav-item active"><a class="nav-link" href="#">Enviar Remessa Agora!</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Remessas Cadastradas</a></li>
+                    <% } %>
+                    
+                                        
                     <% if (Session["USER-LOGADO"] != null && ((Fantasy.FastPay.Domain.Entites.Usuario)Session["USER-LOGADO"]).EhAdministrador) { %>
                         <li class="nav-item"><a class="nav-link" href="../Empresa/EmpresaForm.aspx">Empresa</a></li>
                         <li class="nav-item"><a class="nav-link" href="/Forms/Pais/PaisForm.aspx">Paises</a></li>       
@@ -41,7 +44,7 @@
                     
                     <% } %>                                                            
                     
-                    <% if (Session["USER-LOGADO"] != null && ((Fantasy.FastPay.Domain.Entites.Usuario)Session["USER-LOGADO"]).EhAdministrador) { %>
+                    <% if (Session["USER-LOGADO"] != null) { %>
                         <li class="nav-item">                        
                           <asp:LinkButton runat="server" ID="lbSair" CssClass="nav-link" OnClick="lbSair_Click"  Text="Sair"/>
                         </li>                    
