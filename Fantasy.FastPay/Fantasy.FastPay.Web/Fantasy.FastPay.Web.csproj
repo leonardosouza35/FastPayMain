@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="Forms\Contribuinte\DadosDoContribuinte.aspx" />
     <Content Include="Forms\Empresa\EmpresaForm.aspx" />
     <Content Include="Forms\Estado\EstadoForm.aspx" />
     <Content Include="Forms\InicioForm.aspx" />
@@ -89,6 +90,13 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="DTO\PaisDTO.cs" />
+    <Compile Include="Forms\Contribuinte\DadosDoContribuinte.aspx.cs">
+      <DependentUpon>DadosDoContribuinte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Contribuinte\DadosDoContribuinte.aspx.designer.cs">
+      <DependentUpon>DadosDoContribuinte.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Empresa\EmpresaForm.aspx.cs">
       <DependentUpon>EmpresaForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

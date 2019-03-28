@@ -31,13 +31,13 @@
                     <% if (Session["USER-LOGADO"] != null && ((Fantasy.FastPay.Domain.Entites.Usuario)Session["USER-LOGADO"]).EhAdministrador) { %>
                         <div class="btn-group">
                       <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Tabelas
+                        Cadastro
                       </button>
                       <div class="dropdown-menu">
                         <a class="dropdown-item" href="/Forms/Estado/EstadoForm.aspx">Estado</a>
                         <a class="dropdown-item" href="/Forms/Pais/PaisForm.aspx">Paises</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separação</a>
+                        <a class="dropdown-item" href="/Forms/Contribuinte/DadosDoContribuinte.aspx">Contribuinte</a>
                       </div>
                     </div>
                     
