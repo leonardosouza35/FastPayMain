@@ -126,7 +126,7 @@ namespace Fantasy.FastPay.Web.Forms.Estado
         private void EditarEstado(int estadoId)
         {
             Session["modo"] = "Edicao"; // Utilizando a sessão para controlar se tela esta no estado de inclusão ou edição
-            Session["PaisId"] = estadoId;// Mas existem outras maneiras de controlar isso tbm redirecionando por exemplo para outra tela... uma  tela só de edição
+            Session["EstadoId"] = estadoId;// Mas existem outras maneiras de controlar isso tbm redirecionando por exemplo para outra tela... uma  tela só de edição
             var estado = EstadoAppService.ObterPorId(estadoId);
 
             txtNome.Text = estado.Nome;
