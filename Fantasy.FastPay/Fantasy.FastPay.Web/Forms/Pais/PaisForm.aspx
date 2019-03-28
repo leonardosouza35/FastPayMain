@@ -33,6 +33,11 @@
         </div>
         <hr class="mb-4" />
         <div class="row">
+            <div class="col-12 offset-11 mb-2">
+                <asp:LinkButton runat="server" ID="btnExcel" Text="Excel" CssClass="btn btn-primary" OnClick="btnExcel_Click"></asp:LinkButton>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-12">
                 <asp:GridView ID="grdPaises" runat="server" AutoGenerateColumns="False" EnableModelValidation="True" CssClass="table table-hover" DataKeyNames="Id"
                      OnRowCommand="grdPaises_RowCommand" CellPadding="4" ForeColor="#333333" GridLines="None">

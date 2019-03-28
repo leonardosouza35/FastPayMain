@@ -38,6 +38,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.0.5022.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.1.0\lib\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -84,6 +88,7 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DTO\PaisDTO.cs" />
     <Compile Include="Forms\Empresa\EmpresaForm.aspx.cs">
       <DependentUpon>EmpresaForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -140,10 +145,12 @@
     <Compile Include="Forms\Usuario\CadastroUsuarioForm.aspx.designer.cs">
       <DependentUpon>CadastroUsuarioForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManualMapper\PaisMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Attributes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\js\bootstrap\bootstrap.bundle.js.map" />
@@ -151,6 +158,7 @@
     <Content Include="Scripts\js\bootstrap\bootstrap.js.map" />
     <Content Include="Scripts\js\bootstrap\bootstrap.min.js.map" />
     <Content Include="Forms\Master\Page.Master" />
+    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -166,6 +174,10 @@
     <ProjectReference Include="..\Fantasy.FastPay.Domain\Fantasy.FastPay.Domain.csproj">
       <Project>{b3b3bb14-8d83-4f35-a42c-bba25b5fcfa2}</Project>
       <Name>Fantasy.FastPay.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fantasy.FastPay.Infra.CrossCutting.Excel\Fantasy.FastPay.Infra.CrossCutting.Excel.csproj">
+      <Project>{97ec0d3b-bdd5-4e7e-9a71-58c84215fac6}</Project>
+      <Name>Fantasy.FastPay.Infra.CrossCutting.Excel</Name>
     </ProjectReference>
     <ProjectReference Include="..\Fantasy.FastPay.Infra.Data\Fantasy.FastPay.Infra.Data.csproj">
       <Project>{93ee7c41-1bd3-4de6-a4cb-1c62711b3413}</Project>

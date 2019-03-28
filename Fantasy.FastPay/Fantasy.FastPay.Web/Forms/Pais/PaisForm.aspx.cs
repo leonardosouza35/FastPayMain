@@ -1,6 +1,7 @@
 ﻿using Fantasy.FastPay.Application;
 using Fantasy.FastPay.Application.Interfaces;
 using Fantasy.FastPay.Domain.Services;
+using Fantasy.FastPay.Infra.CrossCutting.Excel;
 using Fantasy.FastPay.Infra.Data.Repositories;
 using System;
 using System.Collections.Generic;
@@ -137,5 +138,23 @@ namespace Fantasy.FastPay.Web.Forms.Pais
 
         #endregion
 
+        protected void btnExcel_Click(object sender, EventArgs e)
+        {
+            var todos = PaisAppService.ObterTodos();
+
+            ManualMapper.PaisMapper mapper = new ManualMapper.PaisMapper();
+
+            var paisesDTO = mapper.MapDTO(todos);
+
+            var excelExport = new ExcelExport("teste.xlsx");
+            excelExport.CreateInMemory(paisesDTO,"Teste123");
+
+            Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+            Response.AddHeader("content-disposition", "attachment;  filename=DetailReport.xlsx");
+            Response.BinaryWrite(excelExport.GetByteArray());
+            
+
+        }
+    
     }
 }

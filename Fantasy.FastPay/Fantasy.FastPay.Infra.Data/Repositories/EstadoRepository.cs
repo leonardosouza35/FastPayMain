@@ -88,11 +88,7 @@ namespace Fantasy.FastPay.Infra.Data.Repositories
         {
             try
             {
-                OpenConnection();
-
-                var paramID = new SqlParameter("@Id", System.Data.SqlDbType.Int);
-                paramID.Direction = System.Data.ParameterDirection.Input;
-                paramID.Value = estado.Id;
+                OpenConnection();              
 
                 var paramNome = new SqlParameter("@Nome", System.Data.SqlDbType.VarChar);
                 paramNome.Direction = System.Data.ParameterDirection.Input;
@@ -103,7 +99,7 @@ namespace Fantasy.FastPay.Infra.Data.Repositories
                 paramDescricao.Value = estado.Descricao;
 
 
-                ExecuteNoQuery("spAtualizarEstado", paramID, paramNome, paramDescricao);
+                ExecuteNoQuery("spAdicionarEstado", paramNome, paramDescricao);
 
             }
             catch (Exception ex)

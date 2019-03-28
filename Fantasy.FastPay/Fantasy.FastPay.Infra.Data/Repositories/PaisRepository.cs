@@ -12,7 +12,7 @@ namespace Fantasy.FastPay.Infra.Data.Repositories
     {
         public Pais ObterPorId(int paisId)
         {
-            var paises = new List<Pais>();
+            var paises = new List<Pais>();            
             try
             {
                 OpenConnection();
