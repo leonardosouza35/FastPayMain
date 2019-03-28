@@ -2,13 +2,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div>
+    <div class="container">
         <h4 class="mb-3">Cadastro de Estado</h4>
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="txtNome">Estado:</label>
-                    <asp:TextBox runat="server" id="txtNome" placeholder="País" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox runat="server" id="txtNome" placeholder="Estado" CssClass="form-control"></asp:TextBox>
                 </div>
             </div>
         </div> 
