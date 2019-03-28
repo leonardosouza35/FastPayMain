@@ -29,7 +29,7 @@
                     
                                         
                     <% if (Session["USER-LOGADO"] != null && ((Fantasy.FastPay.Domain.Entites.Usuario)Session["USER-LOGADO"]).EhAdministrador) { %>
-                        <li class="nav-item"><a class="nav-link" href="../Empresa/EmpresaForm.aspx">Empresa</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Forms/Estado/EstadoForm.aspx">Estado</a></li>
                         <li class="nav-item"><a class="nav-link" href="/Forms/Pais/PaisForm.aspx">Paises</a></li>       
                     <% } %>                                                            
 

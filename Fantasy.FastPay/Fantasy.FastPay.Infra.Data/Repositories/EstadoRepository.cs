@@ -20,7 +20,7 @@ namespace Fantasy.FastPay.Infra.Data.Repositories
                 OpenConnection();
 
                 var listaEstados = new List<Estado>();
-                var dataReader = ExecuteReader("select Id, Nome,  Descricao from ESTADOS");
+                var dataReader = ExecuteReader("spObterTodosOsEstados");
                 if (dataReader.HasRows)
                 {
                     while (dataReader.Read())
@@ -50,7 +50,38 @@ namespace Fantasy.FastPay.Infra.Data.Repositories
 
         public Estado ObterPorId(int estadoId)
         {
-            throw new NotImplementedException();
+            var estados = new List<Estado>();
+            try
+            {
+                OpenConnection();
+                var paramId = new SqlParameter("@Id", System.Data.SqlDbType.Int);
+                paramId.Direction = System.Data.ParameterDirection.Input;
+                paramId.Value = estadoId;
+
+                var reader = ExecuteReader("spObterEstado", paramId);
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        var estado = new Estado();
+                        estado.Id = Convert.ToInt32(reader["Id"]);
+                        estado.Nome = reader["nome"].ToString();
+                        estado.Descricao = reader["descricao"].ToString();
+                        estados.Add(estado);
+                    }
+                }
+
+                return estados.FirstOrDefault(); ;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                CloseConnection();
+            }
         }
 
         public void Adicionar(Estado estado)
@@ -59,19 +90,20 @@ namespace Fantasy.FastPay.Infra.Data.Repositories
             {
                 OpenConnection();
 
-                SqlParameter paramId = new SqlParameter("@Id", System.Data.SqlDbType.Int);
-                paramId.Value = estado.Id;
-                
-                SqlParameter paramNome = new SqlParameter("@Nome", System.Data.SqlDbType.VarChar);
+                var paramID = new SqlParameter("@Id", System.Data.SqlDbType.Int);
+                paramID.Direction = System.Data.ParameterDirection.Input;
+                paramID.Value = estado.Id;
+
+                var paramNome = new SqlParameter("@Nome", System.Data.SqlDbType.VarChar);
+                paramNome.Direction = System.Data.ParameterDirection.Input;
                 paramNome.Value = estado.Nome;
 
-                SqlParameter paramDescricao = new SqlParameter("@Descricao", System.Data.SqlDbType.Int);
+                var paramDescricao = new SqlParameter("@Descricao", System.Data.SqlDbType.VarChar);
+                paramDescricao.Direction = System.Data.ParameterDirection.Input;
                 paramDescricao.Value = estado.Descricao;
 
-                var sqlInsert = @"insert into FastPayDB.dbo.Estados(Id, Nome, Descricao)
-                                    values(@Id, @Nome, @Descricao)";
 
-                ExecuteNoQuery(sqlInsert, paramId, paramNome, paramDescricao);
+                ExecuteNoQuery("spAtualizarEstado", paramID, paramNome, paramDescricao);
 
             }
             catch (Exception ex)
@@ -86,12 +118,52 @@ namespace Fantasy.FastPay.Infra.Data.Repositories
 
         public void Atualizar(Estado estado)
         {
-            throw new NotImplementedException();
+            try
+            {
+                OpenConnection();
+
+                var paramNome = new SqlParameter("@Nome", System.Data.SqlDbType.VarChar);
+                paramNome.Direction = System.Data.ParameterDirection.Input;
+                paramNome.Value = estado.Nome;
+
+                var paramDescricao = new SqlParameter("@Descricao", System.Data.SqlDbType.VarChar);
+                paramDescricao.Direction = System.Data.ParameterDirection.Input;
+                paramDescricao.Value = estado.Descricao;
+
+
+                ExecuteNoQuery("spAdicionarEstado", paramNome, paramDescricao);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                CloseConnection();
+            }
         }
 
         public void Remover(Estado estado)
         {
-            throw new NotImplementedException();
+            try
+            {
+                OpenConnection();
+
+                var paramId = new SqlParameter("@Id", System.Data.SqlDbType.Int);
+                paramId.Direction = System.Data.ParameterDirection.Input;
+                paramId.Value = estado.Id;
+
+                ExecuteNoQuery("spRemoverEstado", paramId);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                CloseConnection();
+            }
         }
     }
 }
