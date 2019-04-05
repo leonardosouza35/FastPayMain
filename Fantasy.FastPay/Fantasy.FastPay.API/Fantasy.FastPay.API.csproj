@@ -80,6 +80,7 @@
     <Folder Include="Transactions\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\qualquer-nome.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
